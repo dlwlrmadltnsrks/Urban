@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AzazaTool</title>
+<meta name="description" content="도시·토목·교통 등 엔지니어링 업계 실무자들을 위한 도구 모음 — 무료 Windows 프로그램">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --ink:#1d2430; --muted:#5d6876; --line:#dfe4ea; --accent:#1c4a78; --accent2:#2f6fb0; --soft:#eef4fa; --bg:#ffffff; --card:#ffffff; --ok:#2a7d2a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#e6ebf1; --muted:#9aa6b4; --line:#2c3642; --accent:#8cc0f2; --accent2:#5aa0e6; --soft:#16212d; --bg:#0f151c; --card:#141c25; --ok:#6cc56c; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Pretendard","Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; word-break:keep-all; }
+  a { color: var(--accent2); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom:1px solid var(--line); }
+  header .wrap { display:flex; align-items:center; gap:12px; height:60px; }
+  header img { width:30px; height:30px; border-radius:7px; }
+  header b { font-size:17px; }
+  header nav { margin-left:auto; display:flex; gap:18px; font-size:14px; }
+  header nav a { color:var(--muted); text-decoration:none; }
+  header nav a:hover { color:var(--ink); }
+  .hero { background: linear-gradient(160deg, #1c4a78, #2f6fb0); color:#fff; }
+  .hero .wrap { padding: 56px 20px 60px; display:grid; grid-template-columns: 1.05fr 1fr; gap:40px; align-items:center; }
+  .hero h1 { font-size: 40px; line-height:1.25; margin:0 0 12px; }
+  .hero p { font-size: 17px; opacity:.92; margin:0 0 26px; }
+  .btn { display:inline-flex; align-items:center; gap:10px; background:#fff; color:#1c4a78; font-weight:700; font-size:17px;
+         padding:14px 26px; border-radius:10px; text-decoration:none; box-shadow:0 6px 18px rgba(0,0,0,.18); }
+  .btn:hover { transform: translateY(-1px); }
+  .btn svg { width:20px; height:20px; }
+  .meta { margin-top:14px; font-size:13.5px; opacity:.85; }
+  .meta span { display:inline-block; margin-right:14px; }
+  .hero .shot { width:100%; border-radius:10px; box-shadow:0 14px 40px rgba(0,0,0,.35); display:block; background:#fff; }
+  section { padding: 56px 0; border-bottom:1px solid var(--line); }
+  h2 { font-size: 26px; margin:0 0 8px; }
+  .sub { color:var(--muted); margin:0 0 28px; }
+  .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 20px 18px; }
+  .card .ic { width:38px; height:38px; border-radius:9px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
+  .card .ic svg { width:21px; height:21px; }
+  .card h3 { margin:0 0 4px; font-size:16.5px; }
+  .card p { margin:0; color:var(--muted); font-size:14.5px; }
+  .steps { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; counter-reset:s; }
+  .step { position:relative; background:var(--soft); border-radius:12px; padding:22px 20px 18px 20px; }
+  .step::before { counter-increment:s; content:counter(s); position:absolute; top:-14px; left:18px; width:30px; height:30px; border-radius:50%;
+                  background:var(--accent2); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:15px; }
+  .step h3 { margin:6px 0 4px; font-size:16.5px; }
+  .step p { margin:0; font-size:14.5px; color:var(--muted); }
+  .two { display:grid; grid-template-columns: 1fr 1fr; gap:28px; align-items:start; }
+  .two img { width:100%; border:1px solid var(--line); border-radius:10px; display:block; }
+  .note { background:var(--soft); border-left:4px solid var(--accent2); padding:12px 16px; border-radius:8px; font-size:14.5px; margin-top:18px; }
+  details { border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin-bottom:10px; background:var(--card); }
+  summary { cursor:pointer; font-weight:600; }
+  details p { margin:8px 0 2px; color:var(--muted); font-size:14.5px; }
+  .rel { border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .rel div { padding:14px 18px; border-bottom:1px solid var(--line); }
+  .rel div:last-child { border-bottom:0; }
+  .rel b { margin-right:10px; }
+  .rel time { color:var(--muted); font-size:13px; }
+  .rel ul { margin:6px 0 0; padding-left:20px; color:var(--muted); font-size:14.5px; }
+  footer { padding:28px 0 40px; color:var(--muted); font-size:14px; }
+  .chip { display:inline-block; font-size:12.5px; padding:2px 9px; border-radius:20px; background:rgba(255,255,255,.18); margin-left:8px; vertical-align:middle; }
+  @media (max-width: 820px) {
+    .hero .wrap { grid-template-columns: 1fr; padding: 40px 16px 44px; }
+    .hero h1 { font-size: 31px; }
+    .grid, .steps, .two { grid-template-columns: 1fr; }
+    header nav { display:none; }
+    .wrap { padding: 0 16px; }
+    .steps { gap:26px; }
+  }
+.tag { display:inline-block; font-size:11.5px; font-weight:700; padding:1px 8px; border-radius:8px; background:#fde68a; color:#7c4a03; margin-left:6px; vertical-align:2px; }
+  .card ul { margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:14px; }
+  .shots { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+  .shots figure { margin:0; } .shots img { width:100%; border:1px solid var(--line); border-radius:10px; display:block; }
+  .shots figcaption { color:var(--muted); font-size:13px; margin-top:6px; }
+  @media (max-width: 820px) { .shots { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <img src="icon.png" alt=""><b>AzazaTool</b>
+  <nav><a href="#tools">도구</a><a href="#start">시작하기</a><a href="#faq">자주 묻는 질문</a><a href="#news">새 소식</a></nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>엔지니어링 실무자를 위한<br>도구 모음<span class="chip">무료</span></h1>
+    <p>도시·토목·교통 실무에서 매번 손으로 하던 도면 작업을 한 번에. 한 번 로그인으로 모든 도구를 쓰고, 새 도구와 업데이트는 자동으로 받습니다.</p>
+    <a class="btn" id="dl" href="https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      최신 버전 다운로드</a>
+    <div class="meta"><span id="ver">AzazaTool 최신 버전</span><span>Windows 10 · 11 (64비트)</span><span id="size"></span></div>
+  </div>
+  <img class="shot" src="launcher.png" alt="AzazaTool 첫 화면">
+</div></div>
+
+<section id="tools"><div class="wrap">
+  <h2>들어 있는 도구</h2>
+  <p class="sub">도구마다 따로 창이 열리고, 여러 도구를 같이 열어 쓸 수 있습니다.</p>
+  <div class="grid">
+    <div class="card"><h3>도면 종합툴<span class="tag">베타</span></h3>
+      <p>수치지형도 도엽(DXF·DWG)을 한 장으로 합치고, 좌표계를 바꾸고, 표고·경사를 분석합니다.</p>
+      <ul><li>겹친 객체 정리 · 레이어 범례 일괄 변경</li><li>GRS80 ↔ Bessel · UTM-K · 원점 간 변환</li>
+      <li>표고·경사 분석표(엑셀) · 삽도(DXF) · GIS 파일</li><li>구역계 안 값만 따로 정리</li></ul></div>
+    <div class="card"><h3>토지조서<span class="tag">베타</span></h3>
+      <p>구역계만 넣으면 최신 지적도를 받아 잘라 내고, 편입 필지의 지목 · 공부상 면적 · 소유구분 · 개별공시지가로 토지조서를 만듭니다.</p>
+      <ul><li>QGIS 자르기와 같은 편입면적 · 완전/부분편입 자동 판정</li><li>지목별 · 소유구분별 요약표 (발표자료용)</li><li>엑셀 · 편입도면 DXF · SHP · GPKG</li></ul></div>
+    <div class="card"><h3>용도지역 → CAD</h3>
+      <p>용도지역 SHP(UQ111)를 「도시·군관리계획수립지침」 도면 표시기준(1/5,000)에 맞춘 해치 도면으로 바꿉니다.</p>
+      <ul><li>21개 용도지역 바탕색 · 사선 · 원 무늬</li><li>제2종일반주거 '7층이하' 레이어 따로</li><li>여러 SHP 를 한 도면으로</li></ul></div>
+    <div class="card"><h3>지목 → CAD</h3>
+      <p>연속지적도 SHP 의 지목 부호로 28개 지목을 나눠, 지목별 색 해치 도면으로 바꿉니다.</p>
+      <ul><li>지번 끝 글자(대 · 전 · 답 …)를 바로 읽음</li><li>여러 시군구를 한 도면으로 (같은 필지는 한 번만)</li></ul></div>
+    <div class="card"><h3>소유구분 → CAD</h3>
+      <p>소유자 값을 국유지 · 공유지 · 사유지로 나눠 색 해치 도면으로 바꿉니다.</p>
+      <ul><li>'국(국토교통부)' · '경기도 광주시' 같은 값도 알아봄</li><li>관리청별 · 지자체별 세부 레이어</li></ul></div>
+  </div>
+  <div class="note">SHP → CAD 도구 3종은 QGIS 스크립트와 같은 규칙으로 만들어, 같은 SHP 로 QGIS 에서 만든 DXF 와 똑같은 결과가 나옵니다. QGIS 는 없어도 됩니다.</div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <h2>시작하기</h2>
+  <p class="sub">설치는 필요 없습니다. 처음 한 번 회원가입만 하면 됩니다.</p>
+  <div class="steps">
+    <div class="step"><h3>내려받기</h3><p>위의 <b>최신 버전 다운로드</b>를 누르면 항상 최신 버전이 받아집니다.</p></div>
+    <div class="step"><h3>압축 풀고 실행</h3><p>압축 파일을 오른쪽 클릭 → <b>모두 압축 풀기</b> 한 뒤, 폴더 안의 <b>AzazaTool.exe</b> 를 실행합니다. “PC 보호” 화면이 나오면 <b>추가 정보 → 실행</b>.</p></div>
+    <div class="step"><h3>회원가입 · 로그인</h3><p>이름 · 업계 · 아이디 · 비밀번호로 가입합니다. 허가되면 이후로는 자동으로 로그인됩니다.</p></div>
+  </div>
+  <div class="shots" style="margin-top:34px">
+    <figure><img src="zone.png" alt="용도지역 → CAD 화면"><figcaption>용도지역 → CAD — 저장하기 전에 레이어별 개수를 확인합니다</figcaption></figure>
+    <figure><img src="drawing.png" alt="도면 종합툴 화면"><figcaption>도면 종합툴 — 도엽 합치기 · 좌표 변환 · 표고·경사</figcaption></figure>
+  </div>
+  <div class="note">자세한 사용법은 AzazaTool 첫 화면 왼쪽의 <b>[사용설명서]</b> 나 <a href="사용설명서.pdf">사용설명서 PDF</a> 를 보세요.</div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>자주 묻는 질문</h2>
+  <details><summary>정말 무료인가요?</summary><p>네. 회원가입만 하면 무료로 쓸 수 있습니다.</p></details>
+  <details><summary>여러 PC 에서 써도 되나요?</summary><p>한 계정으로 PC 2대까지 쓸 수 있습니다 (예: 회사 PC + 노트북). 3번째 PC 에서 로그인하면 가장 오래 안 쓴 PC 가 로그아웃됩니다. 인터넷이 없어도 마지막 확인 뒤 14일까지 쓸 수 있습니다.</p></details>
+  <details><summary>업데이트는 어떻게 하나요?</summary><p>따로 할 필요가 없습니다. AzazaTool 을 켤 때 새 버전을 확인해 받아 두고, 닫을 때 바꿉니다. 이 페이지의 다운로드 버튼도 항상 최신 버전을 받습니다.</p></details>
+  <details><summary>예전에 받은 '도면 종합툴'(DrawingTool.exe)은요?</summary><p>켜면 자동으로 AzazaTool 로 업데이트됩니다. 쓰던 바로가기(DrawingTool.exe)를 눌러도 AzazaTool 이 열립니다. 로그인 정보도 그대로입니다.</p></details>
+  <details><summary>DWG 파일도 되나요?</summary><p>PC 에 AutoCAD(LT 제외) 등 정품이나 무료 ODA File Converter 가 있으면 DWG 를 읽고 쓸 수 있습니다. 없으면 DXF 로 작업합니다.</p></details>
+  <details><summary>첫 화면이 하얗게 나오거나 안 떠요</summary><p>첫 화면은 윈도우에 들어 있는 Microsoft Edge WebView2 로 그립니다. 이게 없는 PC 에서는 자동으로 <b>간단한 화면</b>으로 열리고, 기능은 같습니다.</p></details>
+</div></section>
+
+<section id="news"><div class="wrap">
+  <h2>새 소식</h2>
+  <div class="rel" id="rel"><div><b>AzazaTool 1.1</b><time>2026-10</time>
+    <ul><li>새 도구: 토지조서 (베타)</li><li>첫 화면 다듬기</li></ul></div><div><b>AzazaTool 1.0</b><time>2026-10</time>
+    <ul><li>한 번 로그인으로 모든 도구 · 밝게/어둡게 화면</li><li>새 도구: 용도지역 · 지목 · 소유구분 → CAD</li><li>도면 종합툴 v1.4 베타: 구역계 안 표고·경사 따로 정리</li></ul></div></div>
+</div></section>
+
+<footer><div class="wrap">AzazaTool · 문의: 임현호 (azazahhlim@naver.com)</div></footer>
+<script>
+// 최신 릴리스 정보 (버전 · 크기)
+fetch("https://api.github.com/repos/dlwlrmadltnsrks/Urban/releases/latest").then(r => r.ok ? r.json() : null).then(rel => {
+  if (!rel) return;
+  document.getElementById("ver").textContent = (rel.name || rel.tag_name);
+  const a = (rel.assets || []).find(x => x.name === "AzazaTool-win64.zip");
+  if (a) document.getElementById("size").textContent = "약 " + Math.round(a.size / 1e6) + " MB";
+}).catch(() => {});
+</script>
+</body></html>
