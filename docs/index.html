@@ -98,7 +98,7 @@
 
 <section id="tools"><div class="wrap">
   <h2>들어 있는 도구</h2>
-  <p class="sub">도구마다 따로 창이 열리고, 여러 도구를 같이 열어 쓸 수 있습니다.</p>
+  <p class="sub">모든 도구가 같은 화면 틀로 열립니다. 한 화면에 기능이 다 보이고, 파일은 끌어 놓으면 됩니다. 작업 중에 다른 도구로 가도 계속 돌아갑니다.</p>
   <div class="grid">
     <div class="card"><h3>도면 종합툴<span class="tag">베타</span></h3>
       <p>수치지형도 도엽(DXF·DWG)을 한 장으로 합치고, 좌표계를 바꾸고, 표고·경사를 분석합니다.</p>
@@ -110,6 +110,9 @@
     <div class="card"><h3>PPT 그림 바꾸기<span class="tag">베타</span></h3>
       <p>파워포인트에서 필요한 부분만 잘라 둔 그림을, 자른 범위 · 위치 · 효과는 그대로 두고 새로 내보낸 그림으로 바꿉니다.</p>
       <ul><li>열린 PPT 에 바로 (저장 · 다시 열기 없이)</li><li>대지 · 플롯 범위 · 해상도가 달라도 같은 부분을 자동으로 찾기</li><li>애니메이션 · 테두리 · 앞뒤 순서 그대로</li></ul></div>
+    <div class="card"><h3>현황분석<span class="tag">베타</span></h3>
+      <p>구역계만 고르면 위치도 · 토지이용 현황도 · 지목 현황도를 만듭니다. 일러스트레이터에서 바로 고칠 수 있게 묶음 · 레이어가 정리되어 나옵니다.</p>
+      <ul><li>용지 크기 자유 (A4~A0 · 직접 입력) · SVG · PNG · JPG</li><li>도로번호 표지 · 철도 겹선 · 주요 시설은 종류별로 묶음</li><li>지목별 면적표 엑셀</li></ul></div>
     <div class="card"><h3>용도지역 → CAD</h3>
       <p>용도지역 SHP(UQ111)를 「도시·군관리계획수립지침」 도면 표시기준(1/5,000)에 맞춘 해치 도면으로 바꿉니다.</p>
       <ul><li>21개 용도지역 바탕색 · 사선 · 원 무늬</li><li>제2종일반주거 '7층이하' 레이어 따로</li><li>여러 SHP 를 한 도면으로</li></ul></div>
@@ -133,7 +136,7 @@
   </div>
   <div class="shots" style="margin-top:34px">
     <figure><img src="zone.png" alt="용도지역 → CAD 화면"><figcaption>용도지역 → CAD — 저장하기 전에 레이어별 개수를 확인합니다</figcaption></figure>
-    <figure><img src="drawing.png" alt="도면 종합툴 화면"><figcaption>도면 종합툴 — 도엽 합치기 · 좌표 변환 · 표고·경사</figcaption></figure>
+    <figure><img src="status.png" alt="현황분석 화면"><figcaption>현황분석 — 구역계를 고르면 위치도를 바로 미리 봅니다</figcaption></figure>
   </div>
   <div class="note">자세한 사용법은 AzazaTool 첫 화면 왼쪽의 <b>[사용설명서]</b> 나 <a href="사용설명서.pdf">사용설명서 PDF</a> 를 보세요.</div>
 </div></section>
@@ -150,7 +153,8 @@
 
 <section id="news"><div class="wrap">
   <h2>새 소식</h2>
-  <div class="rel" id="rel"><div><b>AzazaTool 1.2</b><time>2026-10</time>
+  <div class="rel" id="rel"><div><b>AzazaTool 1.3</b><time>2026-10</time>
+    <ul><li>새 도구: 현황분석 (베타) — 위치도 · 토지이용 현황도 · 지목 현황도</li><li>모든 도구를 같은 새 화면 틀로 (예전 화면도 설정에서 고를 수 있음)</li><li>PPT 그림 바꾸기: 늦게 켜지던 문제 고침</li></ul></div><div><b>AzazaTool 1.2</b><time>2026-10</time>
     <ul><li>새 도구: PPT 그림 바꾸기 (베타) — 자른 그림을 자른 범위 그대로 새 그림으로</li></ul></div><div><b>AzazaTool 1.1.3</b><time>2026-10</time>
     <ul><li>토지조서: 고른 연도의 공시지가가 최종 값인지 표시 (공시일 · 7월 추가공시 반영 여부)</li></ul></div><div><b>AzazaTool 1.1.2</b><time>2026-10</time>
     <ul><li>토지조서: 지적도 좌표를 다운로드 SHP 와 같게 맞춤 (매일 자동 대조)</li><li>토지조서: 공시지가 기준일(1월 1일 / 7월 1일 추가공시) 표시 · 최근 공시지가가 빠지던 문제 고침</li><li>토지조서: '구분' 칸(산) 추가</li></ul></div><div><b>AzazaTool 1.1</b><time>2026-10</time>
