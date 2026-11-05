@@ -1,162 +1,88 @@
 <!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AzazaTool</title>
-<meta name="description" content="도시·토목·교통 등 엔지니어링 업계 실무자들을 위한 도구 모음 — 무료 Windows 프로그램">
-<link rel="icon" href="icon.png">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AzazaTool — 엔지니어링 실무 도구 모음</title>
+<meta name="description" content="지적 · 용도지역 SHP 를 CAD 도면으로, 토지조서와 위치도를 몇 분 만에. 도시 · 토목 · 교통 실무자를 위한 무료 도구 모음.">
+<meta property="og:title" content="AzazaTool — 엔지니어링 실무 도구 모음"><meta property="og:description" content="반복 작업은 맡기세요. 무료 · 윈도우 10/11"><meta property="og:image" content="https://azazatool.kr/launcher.png"><meta property="og:url" content="https://azazatool.kr/">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48ZGVmcz48Y2xpcFBhdGggaWQ9InQiPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjIxNiIgaGVpZ2h0PSIyMTYiIHJ4PSI0NCIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCN0KSI+PHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMjE2IiBoZWlnaHQ9IjIxNiIgcng9IjQ0IiBmaWxsPSIjMmY2ZmIwIi8+CjxnIHN0cm9rZT0iI2ZmZDE2NiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik03MCA1MCBMODQgNjgiLz48cGF0aCBkPSJNMTEwIDMyIEwxMTIgNTQiLz48cGF0aCBkPSJNNDAgOTIgTDYyIDk4Ii8+PC9nPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgyMCAxMjggMTUwKSB0cmFuc2xhdGUoMTQgMCkiPjxyZWN0IHg9Ijk2IiB5PSIxNjAiIHdpZHRoPSI3NCIgaGVpZ2h0PSIxMTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZDE2NiIvPgogIDxwYXRoIGQ9Ik04MCAxMTggSDE4NiBWMTYwIGEyNiAyNiAwIDAgMSAtMjYgMjYgSDEwNiBhMjYgMjYgMCAwIDEgLTI2IC0yNiBaIiBmaWxsPSIjZmZkMTY2IiBzdHJva2U9IiMyZjZmYjAiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxyZWN0IHg9Ijc4IiB5PSI4NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTA0IiB5PSI3NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTMwIiB5PSI3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTU2IiB5PSI4NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHBhdGggZD0iTTYwIDEyNCBhMTYgMTYgMCAwIDEgMTYgLTE2IGgzNCBhMjIgMjIgMCAwIDEgMjIgMjIgdjAgYTIwIDIwIDAgMCAxIC0yMCAyMCBoLTM2IGExNiAxNiAwIDAgMSAtMTYgLTE2IHoiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDE4KSIvPgogIDxyZWN0IHg9Ijk2IiB5PSIyMDYiIHdpZHRoPSI3NCIgaGVpZ2h0PSI5IiByeD0iNCIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48cG9seWdvbiBwb2ludHM9IjIwMC4wLDQyLjAgMjA0LjUsNTcuNSAyMjAuMCw2Mi4wIDIwNC41LDY2LjUgMjAwLjAsODIuMCAxOTUuNSw2Ni41IDE4MC4wLDYyLjAgMTk1LjUsNTcuNSIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48L3N2Zz4=">
 <style>
-  :root { --ink:#1d2430; --muted:#5d6876; --line:#dfe4ea; --accent:#1c4a78; --accent2:#2f6fb0; --soft:#eef4fa; --bg:#ffffff; --card:#ffffff; --ok:#2a7d2a; }
-  @media (prefers-color-scheme: dark) {
-    :root { --ink:#e6ebf1; --muted:#9aa6b4; --line:#2c3642; --accent:#8cc0f2; --accent2:#5aa0e6; --soft:#16212d; --bg:#0f151c; --card:#141c25; --ok:#6cc56c; }
-  }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family: "Pretendard","Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; word-break:keep-all; }
-  a { color: var(--accent2); }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-  header { border-bottom:1px solid var(--line); }
-  header .wrap { display:flex; align-items:center; gap:12px; height:60px; }
-  header img { width:30px; height:30px; border-radius:7px; }
-  header b { font-size:17px; }
-  header nav { margin-left:auto; display:flex; gap:18px; font-size:14px; }
-  header nav a { color:var(--muted); text-decoration:none; }
-  header nav a:hover { color:var(--ink); }
-  .hero { background: linear-gradient(160deg, #1c4a78, #2f6fb0); color:#fff; }
-  .hero .wrap { padding: 56px 20px 60px; display:grid; grid-template-columns: 1.05fr 1fr; gap:40px; align-items:center; }
-  .hero h1 { font-size: 40px; line-height:1.25; margin:0 0 12px; }
-  .hero p { font-size: 17px; opacity:.92; margin:0 0 26px; }
-  .btn { display:inline-flex; align-items:center; gap:10px; background:#fff; color:#1c4a78; font-weight:700; font-size:17px;
-         padding:14px 26px; border-radius:10px; text-decoration:none; box-shadow:0 6px 18px rgba(0,0,0,.18); }
-  .btn:hover { transform: translateY(-1px); }
-  .btn svg { width:20px; height:20px; }
-  .meta { margin-top:14px; font-size:13.5px; opacity:.85; }
-  .meta span { display:inline-block; margin-right:14px; }
-  .hero .shot { width:100%; border-radius:10px; box-shadow:0 14px 40px rgba(0,0,0,.35); display:block; background:#fff; }
-  section { padding: 56px 0; border-bottom:1px solid var(--line); }
-  h2 { font-size: 26px; margin:0 0 8px; }
-  .sub { color:var(--muted); margin:0 0 28px; }
-  .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 20px 18px; }
-  .card .ic { width:38px; height:38px; border-radius:9px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
-  .card .ic svg { width:21px; height:21px; }
-  .card h3 { margin:0 0 4px; font-size:16.5px; }
-  .card p { margin:0; color:var(--muted); font-size:14.5px; }
-  .steps { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; counter-reset:s; }
-  .step { position:relative; background:var(--soft); border-radius:12px; padding:22px 20px 18px 20px; }
-  .step::before { counter-increment:s; content:counter(s); position:absolute; top:-14px; left:18px; width:30px; height:30px; border-radius:50%;
-                  background:var(--accent2); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:15px; }
-  .step h3 { margin:6px 0 4px; font-size:16.5px; }
-  .step p { margin:0; font-size:14.5px; color:var(--muted); }
-  .two { display:grid; grid-template-columns: 1fr 1fr; gap:28px; align-items:start; }
-  .two img { width:100%; border:1px solid var(--line); border-radius:10px; display:block; }
-  .note { background:var(--soft); border-left:4px solid var(--accent2); padding:12px 16px; border-radius:8px; font-size:14.5px; margin-top:18px; }
-  details { border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin-bottom:10px; background:var(--card); }
-  summary { cursor:pointer; font-weight:600; }
-  details p { margin:8px 0 2px; color:var(--muted); font-size:14.5px; }
-  .rel { border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-  .rel div { padding:14px 18px; border-bottom:1px solid var(--line); }
-  .rel div:last-child { border-bottom:0; }
-  .rel b { margin-right:10px; }
-  .rel time { color:var(--muted); font-size:13px; }
-  .rel ul { margin:6px 0 0; padding-left:20px; color:var(--muted); font-size:14.5px; }
-  footer { padding:28px 0 40px; color:var(--muted); font-size:14px; }
-  .chip { display:inline-block; font-size:12.5px; padding:2px 9px; border-radius:20px; background:rgba(255,255,255,.18); margin-left:8px; vertical-align:middle; }
-  @media (max-width: 820px) {
-    .hero .wrap { grid-template-columns: 1fr; padding: 40px 16px 44px; }
-    .hero h1 { font-size: 31px; }
-    .grid, .steps, .two { grid-template-columns: 1fr; }
-    header nav { display:none; }
-    .wrap { padding: 0 16px; }
-    .steps { gap:26px; }
-  }
-.tag { display:inline-block; font-size:11.5px; font-weight:700; padding:1px 8px; border-radius:8px; background:#fde68a; color:#7c4a03; margin-left:6px; vertical-align:2px; }
-  .card ul { margin:8px 0 0; padding-left:18px; color:var(--muted); font-size:14px; }
-  .shots { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-  .shots figure { margin:0; } .shots img { width:100%; border:1px solid var(--line); border-radius:10px; display:block; }
-  .shots figcaption { color:var(--muted); font-size:13px; margin-top:6px; }
-  @media (max-width: 820px) { .shots { grid-template-columns: 1fr; } }
-</style>
-</head>
-<body>
-<header><div class="wrap">
-  <img src="icon.png" alt=""><b>AzazaTool</b>
-  <nav><a href="#tools">도구</a><a href="#start">시작하기</a><a href="#faq">자주 묻는 질문</a><a href="#news">새 소식</a></nav>
-</div></header>
+:root{--bg:#f4f6f9;--panel:#fff;--line:#e3e8ef;--text:#17212f;--text2:#34404f;--muted:#5b6778;--soft:#f1f4f8;--acc:#2563eb;--accSoft:#e8effd;--yel:#ffc93c;--shadow:0 1px 2px rgba(18,26,39,.06),0 6px 20px rgba(18,26,39,.05)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--text);font-size:15px;line-height:1.6}
+a{color:var(--acc)}.w{max-width:1160px;margin:0 auto;padding:0 24px}
+nav{background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}nav .w{display:flex;align-items:center;height:62px;gap:24px}
+nav .lo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;color:var(--text);text-decoration:none}nav .lo img{width:30px}nav .m{display:flex;gap:22px}nav .m a{color:var(--text2);text-decoration:none;font-size:14px}nav .m a:hover{color:var(--acc)}nav .sp{flex:1}
+.dl{background:var(--acc);color:#fff!important;padding:9px 16px;border-radius:9px;font-weight:700;text-decoration:none;font-size:14px}
+.hero{background:linear-gradient(160deg,#1e40af,#2563eb 60%,#3b82f6);color:#fff;padding:60px 0 0;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:end}
+.tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:20px;font-size:13px}
+.hero h1{font-size:44px;line-height:1.25;margin:18px 0 14px;letter-spacing:-1px}.hero h1 em{font-style:normal;color:var(--yel)}
+.hero p{opacity:.92;margin:0 0 26px;font-size:16px;line-height:1.7}
+.cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.big{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1e40af;font-weight:800;padding:15px 26px;border-radius:12px;font-size:16px;box-shadow:0 8px 24px rgba(0,0,0,.18);text-decoration:none}.big svg{width:20px;height:20px}
+.ghost{border:1px solid rgba(255,255,255,.5);color:#fff;padding:14px 20px;border-radius:12px;font-weight:700;text-decoration:none}
+.small{font-size:12.5px;opacity:.85;margin-bottom:60px}
+.shot{border-radius:14px 14px 0 0;overflow:hidden;box-shadow:0 -10px 50px rgba(0,0,0,.3);border:6px solid rgba(255,255,255,.18);border-bottom:0}.shot img{width:100%;display:block}
+.stats{display:flex;background:var(--panel);border-radius:14px;box-shadow:var(--shadow);transform:translateY(-34px)}
+.stats div{flex:1;padding:18px 22px;border-right:1px solid var(--line)}.stats div:last-child{border:0}.stats b{display:block;font-size:21px;color:var(--acc)}.stats span{color:var(--muted);font-size:13px}
+section{padding:10px 0 50px}h2{font-size:28px;margin:10px 0 6px;letter-spacing:-.5px}.lead{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.ti{width:40px;height:40px;border-radius:10px;background:var(--accSoft);display:flex;align-items:center;justify-content:center}.ti svg{width:22px;height:22px;fill:none;stroke:var(--acc);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tc h3{margin:12px 0 6px;font-size:16px}.tc h3 .tag{background:#fff4d1;color:#7a5600;border:0;font-size:11px;padding:1px 7px;margin-left:6px;vertical-align:2px}
+.tc p{margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.6}
+.io{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-bottom:10px}.io span{background:var(--soft);border:1px solid var(--line);padding:3px 8px;border-radius:6px;color:var(--text2);font-weight:700}
+.tc ul{margin:auto 0 0;padding:10px 0 0 16px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--text2);line-height:1.7}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;color:var(--text2);font-size:14px;margin-top:18px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin:20px 0}.feat img{width:100%;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.feat ul{padding:0;list-style:none;line-height:2.1;color:var(--text2)}.feat li:before{content:"✓  ";color:var(--acc);font-weight:800}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.steps div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}.steps>div>b{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;align-items:center;justify-content:center}
+.steps h3{margin:10px 0 4px;font-size:16px}.steps p{color:var(--muted);font-size:13.5px;margin:0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}summary{cursor:pointer;font-weight:700}details p{color:var(--text2);margin:10px 0 0}
+.rel{display:grid;gap:10px}.rel>div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px}.rel time{color:var(--muted);font-size:12px;margin-left:8px}.rel ul{margin:6px 0 0;padding-left:18px;color:var(--text2);font-size:14px}
+.rel>div:nth-child(n+5){display:none}.rel.all>div{display:block}.more{margin-top:10px;background:none;border:1px solid var(--line);border-radius:9px;padding:8px 14px;font:inherit;cursor:pointer;color:var(--text2)}
+.pv{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 30px;font-size:14px;color:var(--text2)}.pv b{display:block;color:var(--text);margin-bottom:2px}
+footer{border-top:1px solid var(--line);background:var(--panel);padding:26px 0;color:var(--muted);font-size:13px}footer .w{display:flex;gap:16px;flex-wrap:wrap;align-items:center}footer img{width:22px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.hero .w,.feat{grid-template-columns:1fr}.hero h1{font-size:34px}nav .m{display:none}.stats{flex-wrap:wrap}.stats div{flex:1 1 50%;border-bottom:1px solid var(--line)}}
+@media (max-width:600px){.grid,.steps,.pv{grid-template-columns:1fr}.hero h1{font-size:28px}.w{padding:0 16px}}
+</style></head><body>
+<nav><div class="w"><a class="lo" href="#"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48ZGVmcz48Y2xpcFBhdGggaWQ9InQiPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjIxNiIgaGVpZ2h0PSIyMTYiIHJ4PSI0NCIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCN0KSI+PHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMjE2IiBoZWlnaHQ9IjIxNiIgcng9IjQ0IiBmaWxsPSIjMmY2ZmIwIi8+CjxnIHN0cm9rZT0iI2ZmZDE2NiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik03MCA1MCBMODQgNjgiLz48cGF0aCBkPSJNMTEwIDMyIEwxMTIgNTQiLz48cGF0aCBkPSJNNDAgOTIgTDYyIDk4Ii8+PC9nPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgyMCAxMjggMTUwKSB0cmFuc2xhdGUoMTQgMCkiPjxyZWN0IHg9Ijk2IiB5PSIxNjAiIHdpZHRoPSI3NCIgaGVpZ2h0PSIxMTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZDE2NiIvPgogIDxwYXRoIGQ9Ik04MCAxMTggSDE4NiBWMTYwIGEyNiAyNiAwIDAgMSAtMjYgMjYgSDEwNiBhMjYgMjYgMCAwIDEgLTI2IC0yNiBaIiBmaWxsPSIjZmZkMTY2IiBzdHJva2U9IiMyZjZmYjAiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxyZWN0IHg9Ijc4IiB5PSI4NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTA0IiB5PSI3NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTMwIiB5PSI3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTU2IiB5PSI4NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHBhdGggZD0iTTYwIDEyNCBhMTYgMTYgMCAwIDEgMTYgLTE2IGgzNCBhMjIgMjIgMCAwIDEgMjIgMjIgdjAgYTIwIDIwIDAgMCAxIC0yMCAyMCBoLTM2IGExNiAxNiAwIDAgMSAtMTYgLTE2IHoiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDE4KSIvPgogIDxyZWN0IHg9Ijk2IiB5PSIyMDYiIHdpZHRoPSI3NCIgaGVpZ2h0PSI5IiByeD0iNCIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48cG9seWdvbiBwb2ludHM9IjIwMC4wLDQyLjAgMjA0LjUsNTcuNSAyMjAuMCw2Mi4wIDIwNC41LDY2LjUgMjAwLjAsODIuMCAxOTUuNSw2Ni41IDE4MC4wLDYyLjAgMTk1LjUsNTcuNSIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48L3N2Zz4=" alt="">AzazaTool</a><div class="m"><a href="#tools">도구</a><a href="#start">시작하기</a><a href="#news">새 소식</a><a href="#faq">자주 묻는 질문</a><a href="사용설명서.pdf">사용설명서</a></div><span class="sp"></span><a class="dl" href="https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip">내려받기</a></div></nav>
+<header class="hero"><div class="w"><div>
+<span class="tag">무료 · 윈도우 10/11 · <span id="ver">최신 버전</span></span>
+<h1>엔지니어링 실무,<br><em>반복 작업</em>은 맡기세요</h1>
+<p>지적 · 용도지역 SHP 를 CAD 도면으로, 토지조서와 위치도를 몇 분 만에.<br>도시 · 토목 · 교통 실무자를 위한 도구 모음입니다.</p>
+<div class="cta"><a class="big" href="https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>무료로 내려받기</a><a class="ghost" href="사용설명서.pdf">사용설명서 보기</a></div>
+<div class="small"><span id="size">약 200MB</span> · 설치 없이 압축 풀고 실행 · 업데이트 자동</div></div>
+<div class="shot"><img src="launcher.png" alt="AzazaTool 첫 화면"></div></div></header>
+<div class="w"><div class="stats"><div><b>8가지</b><span>실무 도구</span></div><div><b>DXF · DWG</b><span>CAD 로 바로</span></div><div><b>SVG · PNG</b><span>PPT · 일러스트 호환</span></div><div><b>무료</b><span>가입만 하면</span></div></div></div>
 
-<div class="hero"><div class="wrap">
-  <div>
-    <h1>엔지니어링 실무자를 위한<br>도구 모음<span class="chip">무료</span></h1>
-    <p>도시·토목·교통 실무에서 매번 손으로 하던 도면 작업을 한 번에. 한 번 로그인으로 모든 도구를 쓰고, 새 도구와 업데이트는 자동으로 받습니다.</p>
-    <a class="btn" id="dl" href="https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-      최신 버전 다운로드</a>
-    <div class="meta"><span id="ver">AzazaTool 최신 버전</span><span>Windows 10 · 11 (64비트)</span><span id="size"></span></div>
-  </div>
-  <img class="shot" src="launcher.png" alt="AzazaTool 첫 화면">
-</div></div>
-
-<section id="tools"><div class="wrap">
-  <h2>들어 있는 도구</h2>
-  <p class="sub">모든 도구가 같은 화면 틀로 열립니다. 한 화면에 기능이 다 보이고, 파일은 끌어 놓으면 됩니다. 작업 중에 다른 도구로 가도 계속 돌아갑니다.</p>
-  <div class="grid">
-    <div class="card"><h3>도면 종합툴</h3>
-      <p>수치지형도 도엽(DXF·DWG)을 한 장으로 합치고, 좌표계를 바꾸고, 표고·경사를 분석합니다.</p>
-      <ul><li>겹친 객체 정리 · 레이어 범례 일괄 변경</li><li>GRS80 ↔ Bessel · UTM-K · 원점 간 변환</li>
+<section id="tools"><div class="w">
+<h2>들어 있는 도구</h2><p class="lead">필요한 것만 골라 쓰세요. 모두 한 프로그램 안에 있고, 파일은 끌어다 놓으면 됩니다.</p>
+<div class="grid">
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 4v16"/></svg></div><h3>토지조서<span class="tag">베타</span></h3><p>구역계만 넣으면 최신 지적도를 받아 잘라 내고, 편입 필지의 지목 · 공부상 면적 · 소유구분 · 개별공시지가로 토지조서를 만듭니다.</p><div class="io"><span>구역계</span>→<span>엑셀 · DXF · SHP</span></div><ul><li>QGIS 자르기와 같은 편입면적 · 완전/부분편입 자동 판정</li><li>지목별 · 소유구분별 요약표 (발표자료용)</li><li>엑셀 · 편입도면 DXF · SHP · GPKG</li></ul></div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/></svg></div><h3>현황분석<span class="tag">베타</span></h3><p>구역계만 고르면 위치도 · 토지이용 현황도 · 지목 현황도를 만듭니다. 일러스트레이터에서 바로 고칠 수 있게 묶음 · 레이어가 정리되어 나옵니다.</p><div class="io"><span>구역계</span>→<span>SVG · PNG · 엑셀</span></div><ul><li>용지 크기 자유 (A4~A0 · 직접 입력) · SVG · PNG · JPG</li><li>지도 범위 · 반경 자동 · PPT 에 넣고 그룹을 풀어도 그대로</li><li>도로번호 표지 · 철도 · 지하철 노선 이름표 · 주요 시설은 종류별로 묶음</li><li>지목별 면적표 엑셀</li></ul></div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 12h9V3M12 12l9 9"/><path d="M6 7h3"/></svg></div><h3>지적도<span class="tag">베타</span></h3><p>지적 SHP(또는 구역계 → 브이월드)의 필지마다 지번을 필지 방향 · 크기에 맞춰 가운데에 넣은 DXF · DWG 를 만듭니다.</p><div class="io"><span>지적 SHP</span>→<span>DXF · DWG</span></div><ul><li>지번은 SHP 값 그대로 · 좌표도 SHP 그대로</li><li>세로 · 대각선 필지는 글자도 그 방향으로</li><li>이 PC 의 글꼴에서 고르기 (글자 폭 자동 맞춤)</li></ul></div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>도면 종합툴</h3><p>수치지형도 도엽(DXF·DWG)을 한 장으로 합치고, 좌표계를 바꾸고, 표고·경사를 분석합니다.</p><div class="io"><span>DXF · DWG</span>→<span>DXF · 엑셀</span></div><ul><li>겹친 객체 정리 · 레이어 범례 일괄 변경</li><li>GRS80 ↔ Bessel · UTM-K · 원점 간 변환</li>
       <li>표고·경사 분석표(엑셀) · 삽도(DXF) · GIS 파일 (표고만 · 경사만도)</li><li>구역계 안 값만 따로 정리</li></ul></div>
-    <div class="card"><h3>토지조서<span class="tag">베타</span></h3>
-      <p>구역계만 넣으면 최신 지적도를 받아 잘라 내고, 편입 필지의 지목 · 공부상 면적 · 소유구분 · 개별공시지가로 토지조서를 만듭니다.</p>
-      <ul><li>QGIS 자르기와 같은 편입면적 · 완전/부분편입 자동 판정</li><li>지목별 · 소유구분별 요약표 (발표자료용)</li><li>엑셀 · 편입도면 DXF · SHP · GPKG</li></ul></div>
-    <div class="card"><h3>PPT 그림 바꾸기</h3>
-      <p>파워포인트에서 필요한 부분만 잘라 둔 그림을, 자른 범위 · 위치 · 효과는 그대로 두고 새로 내보낸 그림으로 바꿉니다.</p>
-      <ul><li>열린 PPT 에 바로 (저장 · 다시 열기 없이)</li><li>대지 · 플롯 범위 · 해상도가 달라도 같은 부분을 자동으로 찾기</li><li>애니메이션 · 테두리 · 앞뒤 순서 그대로</li></ul></div>
-    <div class="card"><h3>현황분석<span class="tag">베타</span></h3>
-      <p>구역계만 고르면 위치도 · 토지이용 현황도 · 지목 현황도를 만듭니다. 일러스트레이터에서 바로 고칠 수 있게 묶음 · 레이어가 정리되어 나옵니다.</p>
-      <ul><li>용지 크기 자유 (A4~A0 · 직접 입력) · SVG · PNG · JPG</li><li>지도 범위 · 반경 자동 · PPT 에 넣고 그룹을 풀어도 그대로</li><li>도로번호 표지 · 철도 · 지하철 노선 이름표 · 주요 시설은 종류별로 묶음</li><li>지목별 면적표 엑셀</li></ul></div>
-    <div class="card"><h3>지적도<span class="tag">베타</span></h3>
-      <p>지적 SHP(또는 구역계 → 브이월드)의 필지마다 지번을 필지 방향 · 크기에 맞춰 가운데에 넣은 DXF · DWG 를 만듭니다.</p>
-      <ul><li>지번은 SHP 값 그대로 · 좌표도 SHP 그대로</li><li>세로 · 대각선 필지는 글자도 그 방향으로</li><li>이 PC 의 글꼴에서 고르기 (글자 폭 자동 맞춤)</li></ul></div>
-    <div class="card"><h3>용도지역 → CAD</h3>
-      <p>용도지역 SHP(UQ111)를 「도시·군관리계획수립지침」 도면 표시기준(1/5,000)에 맞춘 해치 도면으로 바꿉니다.</p>
-      <ul><li>21개 용도지역 바탕색 · 사선 · 원 무늬</li><li>제2종일반주거 '7층이하' 레이어 따로</li><li>여러 SHP 를 한 도면으로</li></ul></div>
-    <div class="card"><h3>지목 → CAD</h3>
-      <p>연속지적도 SHP 의 지목 부호로 28개 지목을 나눠, 지목별 색 해치 도면으로 바꿉니다.</p>
-      <ul><li>지번 끝 글자(대 · 전 · 답 …)를 바로 읽음</li><li>여러 시군구를 한 도면으로 (같은 필지는 한 번만)</li></ul></div>
-    <div class="card"><h3>소유구분 → CAD</h3>
-      <p>소유자 값을 국유지 · 공유지 · 사유지로 나눠 색 해치 도면으로 바꿉니다.</p>
-      <ul><li>'국(국토교통부)' · '경기도 광주시' 같은 값도 알아봄</li><li>관리청별 · 지자체별 세부 레이어</li></ul></div>
-  </div>
-  <div class="note">SHP → CAD 도구 3종은 QGIS 스크립트와 같은 규칙으로 만들어, 같은 SHP 로 QGIS 에서 만든 DXF 와 똑같은 결과가 나옵니다. QGIS 는 없어도 됩니다.</div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3z"/><path d="M9 4v13M15 7v13"/></svg></div><h3>용도지역 → CAD</h3><p>용도지역 SHP(UQ111)를 「도시·군관리계획수립지침」 도면 표시기준(1/5,000)에 맞춘 해치 도면으로 바꿉니다.</p><div class="io"><span>SHP</span>→<span>DXF</span></div><ul><li>21개 용도지역 바탕색 · 사선 · 원 무늬</li><li>제2종일반주거 '7층이하' 레이어 따로</li><li>여러 SHP 를 한 도면으로</li></ul></div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></div><h3>지목 → CAD</h3><p>연속지적도 SHP 의 지목 부호로 28개 지목을 나눠, 지목별 색 해치 도면으로 바꿉니다.</p><div class="io"><span>SHP</span>→<span>DXF</span></div><ul><li>지번 끝 글자(대 · 전 · 답 …)를 바로 읽음</li><li>여러 시군구를 한 도면으로 (같은 필지는 한 번만)</li></ul></div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/></svg></div><h3>소유구분 → CAD</h3><p>소유자 값을 국유지 · 공유지 · 사유지로 나눠 색 해치 도면으로 바꿉니다.</p><div class="io"><span>SHP</span>→<span>DXF</span></div><ul><li>'국(국토교통부)' · '경기도 광주시' 같은 값도 알아봄</li><li>관리청별 · 지자체별 세부 레이어</li></ul></div>
+<div class="tc"><div class="ti"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><circle cx="9" cy="10" r="2"/><path d="M21 15l-5-5-8 8"/></svg></div><h3>PPT 그림 바꾸기</h3><p>파워포인트에서 필요한 부분만 잘라 둔 그림을, 자른 범위 · 위치 · 효과는 그대로 두고 새로 내보낸 그림으로 바꿉니다.</p><div class="io"><span>PPT</span>→<span>PPT</span></div><ul><li>열린 PPT 에 바로 (저장 · 다시 열기 없이)</li><li>대지 · 플롯 범위 · 해상도가 달라도 같은 부분을 자동으로 찾기</li><li>애니메이션 · 테두리 · 앞뒤 순서 그대로</li></ul></div>
+</div>
+<div class="note">SHP → CAD 도구 3종은 QGIS 스크립트와 같은 규칙으로 만들어, 같은 SHP 로 QGIS 에서 만든 DXF 와 똑같은 결과가 나옵니다. QGIS 는 없어도 됩니다.</div>
+<div class="feat"><img src="status.png" alt="현황분석 화면"><div><h2>위치도, 클릭 몇 번이면</h2><p class="lead">구역계를 넣으면 주변 철도 · 도로 · 반경을 알아서 그립니다.</p><ul><li>PPT 에 넣고 그룹을 풀어도 글자가 깨지지 않는 SVG</li><li>지하철 노선 색 · 환승역 표시 · 도로번호 표지</li><li>지도 밖 요소는 넣지 않아 일러스트에서도 깔끔</li></ul></div></div>
+<div class="feat"><div><h2>SHP 를 CAD 도면으로</h2><p class="lead">용도지역 · 지목 · 소유구분을 지침 표시기준에 맞춘 해치 도면으로 바꿉니다.</p><ul><li>저장하기 전에 레이어별 개수 확인</li><li>여러 시군구 SHP 를 한 도면으로</li><li>DXF · DWG (정품 CAD 또는 무료 변환기가 있으면)</li></ul></div><img src="zone.png" alt="용도지역 → CAD 화면"></div>
 </div></section>
 
-<section id="start"><div class="wrap">
-  <h2>시작하기</h2>
-  <p class="sub">설치는 필요 없습니다. 처음 한 번 회원가입만 하면 됩니다.</p>
-  <div class="steps">
-    <div class="step"><h3>내려받기</h3><p>위의 <b>최신 버전 다운로드</b>를 누르면 항상 최신 버전이 받아집니다.</p></div>
-    <div class="step"><h3>압축 풀고 실행</h3><p>압축 파일을 오른쪽 클릭 → <b>모두 압축 풀기</b> 한 뒤, 폴더 안의 <b>AzazaTool.exe</b> 를 실행합니다. “PC 보호” 화면이 나오면 <b>추가 정보 → 실행</b>.</p></div>
-    <div class="step"><h3>회원가입 · 로그인</h3><p>이름 · 업계 · 아이디 · 비밀번호로 가입합니다. 허가되면 이후로는 자동으로 로그인됩니다.</p></div>
-  </div>
-  <div class="shots" style="margin-top:34px">
-    <figure><img src="zone.png" alt="용도지역 → CAD 화면"><figcaption>용도지역 → CAD — 저장하기 전에 레이어별 개수를 확인합니다</figcaption></figure>
-    <figure><img src="status.png" alt="현황분석 화면"><figcaption>현황분석 — 구역계를 고르면 위치도를 바로 미리 봅니다</figcaption></figure>
-  </div>
-  <div class="note">자세한 사용법은 AzazaTool 첫 화면 왼쪽의 <b>[사용설명서]</b> 나 <a href="사용설명서.pdf">사용설명서 PDF</a> 를 보세요.</div>
+<section id="start"><div class="w">
+<h2>시작하기</h2><p class="lead">설치는 필요 없습니다. 3단계면 끝납니다.</p>
+<div class="steps"><div><b>1</b><h3>내려받기</h3><p>위의 <a href="https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip">무료로 내려받기</a>를 누르면 항상 최신 버전이 받아집니다.</p></div>
+<div><b>2</b><h3>압축 풀고 실행</h3><p>압축 파일을 오른쪽 클릭 → <b>모두 압축 풀기</b> 한 뒤 <b>AzazaTool.exe</b> 를 실행합니다. “PC 보호” 화면이 나오면 <b>추가 정보 → 실행</b>.</p></div>
+<div><b>3</b><h3>회원가입</h3><p>이름 · 업계 · 아이디 · 비밀번호로 가입합니다. 허가되면 이후로는 자동으로 로그인됩니다.</p></div></div>
 </div></section>
 
-<section id="faq"><div class="wrap">
-  <h2>자주 묻는 질문</h2>
-  <details><summary>정말 무료인가요?</summary><p>네. 회원가입만 하면 무료로 쓸 수 있습니다.</p></details>
-  <details><summary>여러 PC 에서 써도 되나요?</summary><p>한 계정으로 PC 2대까지 쓸 수 있습니다 (예: 회사 PC + 노트북). 3번째 PC 에서 로그인하면 가장 오래 안 쓴 PC 가 로그아웃됩니다. 인터넷이 없어도 마지막 확인 뒤 14일까지 쓸 수 있습니다.</p></details>
-  <details><summary>업데이트는 어떻게 하나요?</summary><p>따로 할 필요가 없습니다. AzazaTool 을 켤 때 새 버전을 확인해 받아 두고, 닫을 때 바꿉니다. 이 페이지의 다운로드 버튼도 항상 최신 버전을 받습니다.</p></details>
-  <details><summary>예전에 받은 '도면 종합툴'(DrawingTool.exe)은요?</summary><p>켜면 자동으로 AzazaTool 로 업데이트됩니다. 쓰던 바로가기(DrawingTool.exe)를 눌러도 AzazaTool 이 열립니다. 로그인 정보도 그대로입니다.</p></details>
-  <details><summary>DWG 파일도 되나요?</summary><p>PC 에 AutoCAD(LT 제외) 등 정품이나 무료 ODA File Converter 가 있으면 DWG 를 읽고 쓸 수 있습니다. 없으면 DXF 로 작업합니다.</p></details>
-  <details><summary>첫 화면이 하얗게 나오거나 안 떠요</summary><p>첫 화면은 윈도우에 들어 있는 Microsoft Edge WebView2 로 그립니다. 이게 없는 PC 에서는 자동으로 <b>간단한 화면</b>으로 열리고, 기능은 같습니다.</p></details>
-</div></section>
-
-<section id="news"><div class="wrap">
-  <h2>새 소식</h2>
-  <div class="rel" id="rel"><div><b>AzazaTool 1.5.7</b><time>2026-11</time>
+<section id="news"><div class="w">
+<h2>새 소식</h2><p class="lead">새 버전은 프로그램을 켤 때 자동으로 받아집니다.</p>
+<div class="rel" id="rel"><div><b>AzazaTool 1.5.11</b><time>2026-11</time>
+    <ul><li>새 로그인 · 회원가입 화면 · 가입할 때 개인정보 동의</li><li>회원 탈퇴 (설정 → 계정): 서버의 내 정보를 바로 모두 지움</li><li>사이트 주소 azazatool.kr · 사이트 새 디자인</li><li>토지조서 · 위치도 조회가 더 빠르고 안정적으로 (최종 공시지가 · 철도 노선을 서버에 저장)</li></ul></div><div><b>AzazaTool 1.5.8 ~ 1.5.10</b><time>2026-11</time>
+    <ul><li>회사망에서도 가입 · 업데이트가 되도록 고침</li><li>작업 중에는 파일 · 설정을 바꾸지 못하게 막아 오류 방지</li><li>첫 화면에 지적도 카드</li></ul></div><div><b>AzazaTool 1.5.7</b><time>2026-11</time>
     <ul><li>새 도구: 지적도 (베타) — 필지마다 지번을 필지 방향 · 크기에 맞춰 DXF · DWG 로</li><li>모든 도구 글꼴 칸: 이 PC 의 글꼴에서 고르기 (기본 맑은 고딕)</li><li>위치도: 지도 범위 · 반경 자동 · 지도 밖 · 숨김 요소는 SVG 에 넣지 않음</li></ul></div><div><b>AzazaTool 1.5.5 · 1.5.6</b><time>2026-11</time>
     <ul><li>위치도 SVG 를 PPT 에서 그룹을 풀어도 그대로 · 노선 이름표 · 환승역 삼태극</li><li>토지조서: 편입 최소 면적 (선이 스친 조각 빼기)</li></ul></div><div><b>AzazaTool 1.5.4</b><time>2026-11</time>
     <ul><li>새 조회 서버(한국): 토지조서 · 현황분석의 브이월드 조회가 훨씬 빠르고 끊김이 거의 없음</li><li>토지조서: 서버 조회 수 줄임 (필지당 대개 2건)</li></ul></div><div><b>AzazaTool 1.5.3</b><time>2026-11</time>
@@ -173,16 +99,33 @@
     <ul><li>토지조서: 지적도 좌표를 다운로드 SHP 와 같게 맞춤 (매일 자동 대조)</li><li>토지조서: 공시지가 기준일(1월 1일 / 7월 1일 추가공시) 표시 · 최근 공시지가가 빠지던 문제 고침</li><li>토지조서: '구분' 칸(산) 추가</li></ul></div><div><b>AzazaTool 1.1</b><time>2026-10</time>
     <ul><li>새 도구: 토지조서 (베타)</li><li>첫 화면 다듬기</li></ul></div><div><b>AzazaTool 1.0</b><time>2026-10</time>
     <ul><li>한 번 로그인으로 모든 도구 · 밝게/어둡게 화면</li><li>새 도구: 용도지역 · 지목 · 소유구분 → CAD</li><li>도면 종합툴 v1.4 베타: 구역계 안 표고·경사 따로 정리</li></ul></div></div>
+<button class="more" onclick="document.getElementById('rel').classList.add('all');this.remove()">지난 소식 더 보기</button>
 </div></section>
 
-<footer><div class="wrap">AzazaTool · 문의: 임현호 (azazahhlim@naver.com)</div></footer>
+<section id="faq"><div class="w">
+<h2>자주 묻는 질문</h2>
+<details><summary>정말 무료인가요?</summary><p>네. 회원가입만 하면 무료로 쓸 수 있습니다.</p></details>
+  <details><summary>여러 PC 에서 써도 되나요?</summary><p>한 계정으로 PC 2대까지 쓸 수 있습니다 (예: 회사 PC + 노트북). 3번째 PC 에서 로그인하면 가장 오래 안 쓴 PC 가 로그아웃됩니다. 인터넷이 없어도 마지막 확인 뒤 14일까지 쓸 수 있습니다.</p></details>
+  <details><summary>업데이트는 어떻게 하나요?</summary><p>따로 할 필요가 없습니다. AzazaTool 을 켤 때 새 버전을 확인해 받아 두고, 닫을 때 바꿉니다. 이 페이지의 다운로드 버튼도 항상 최신 버전을 받습니다.</p></details>
+  <details><summary>예전에 받은 '도면 종합툴'(DrawingTool.exe)은요?</summary><p>켜면 자동으로 AzazaTool 로 업데이트됩니다. 쓰던 바로가기(DrawingTool.exe)를 눌러도 AzazaTool 이 열립니다. 로그인 정보도 그대로입니다.</p></details>
+  <details><summary>DWG 파일도 되나요?</summary><p>PC 에 AutoCAD(LT 제외) 등 정품이나 무료 ODA File Converter 가 있으면 DWG 를 읽고 쓸 수 있습니다. 없으면 DXF 로 작업합니다.</p></details>
+  <details><summary>첫 화면이 하얗게 나오거나 안 떠요</summary><p>첫 화면은 윈도우에 들어 있는 Microsoft Edge WebView2 로 그립니다. 이게 없는 PC 에서는 자동으로 <b>간단한 화면</b>으로 열리고, 기능은 같습니다.</p></details>
+  <details><summary>탈퇴하면 정보는 어떻게 되나요?</summary><p>AzazaTool <b>설정 → 계정 → 회원 탈퇴</b>를 누르고 비밀번호를 넣으면, 서버에 있는 이름 · 아이디 · 소속 · PC 목록 · 사용 기록이 바로 모두 지워집니다. 내 PC 에 저장한 결과 파일은 그대로 남습니다.</p></details>
+</div></section>
+
+<section id="privacy"><div class="w">
+<h2>개인정보 처리 안내</h2><p class="lead">회원가입 때 동의하는 내용과 같습니다.</p>
+<div class="pv"><div><b>모으는 것</b>이름 · 아이디 · 비밀번호 · 업계 · PC 번호 (소속 · 소개해 준 분은 넣은 경우만)</div><div><b>쓰는 곳</b>본인 확인 · PC 대수 관리 · 문의 답변 — 다른 곳에 주지 않습니다</div>
+<div><b>비밀번호</b>PC 에서 바꿔서 보내고 한 번 더 암호화해 저장합니다. 관리자도 볼 수 없습니다.</div><div><b>보관 · 삭제</b>프로그램 설정 → 계정 → 회원 탈퇴를 누르면 바로 모두 지웁니다.</div></div>
+</div></section>
+
+<footer><div class="w"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48ZGVmcz48Y2xpcFBhdGggaWQ9InQiPjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjIxNiIgaGVpZ2h0PSIyMTYiIHJ4PSI0NCIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCN0KSI+PHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMjE2IiBoZWlnaHQ9IjIxNiIgcng9IjQ0IiBmaWxsPSIjMmY2ZmIwIi8+CjxnIHN0cm9rZT0iI2ZmZDE2NiIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik03MCA1MCBMODQgNjgiLz48cGF0aCBkPSJNMTEwIDMyIEwxMTIgNTQiLz48cGF0aCBkPSJNNDAgOTIgTDYyIDk4Ii8+PC9nPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgyMCAxMjggMTUwKSB0cmFuc2xhdGUoMTQgMCkiPjxyZWN0IHg9Ijk2IiB5PSIxNjAiIHdpZHRoPSI3NCIgaGVpZ2h0PSIxMTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZDE2NiIvPgogIDxwYXRoIGQ9Ik04MCAxMTggSDE4NiBWMTYwIGEyNiAyNiAwIDAgMSAtMjYgMjYgSDEwNiBhMjYgMjYgMCAwIDEgLTI2IC0yNiBaIiBmaWxsPSIjZmZkMTY2IiBzdHJva2U9IiMyZjZmYjAiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxyZWN0IHg9Ijc4IiB5PSI4NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTA0IiB5PSI3NCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTMwIiB5PSI3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+PHJlY3QgeD0iMTU2IiB5PSI4NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjcwIiByeD0iMTQiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHBhdGggZD0iTTYwIDEyNCBhMTYgMTYgMCAwIDEgMTYgLTE2IGgzNCBhMjIgMjIgMCAwIDEgMjIgMjIgdjAgYTIwIDIwIDAgMCAxIC0yMCAyMCBoLTM2IGExNiAxNiAwIDAgMSAtMTYgLTE2IHoiIGZpbGw9IiNmZmQxNjYiIHN0cm9rZT0iIzJmNmZiMCIgc3Ryb2tlLXdpZHRoPSI1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2IDE4KSIvPgogIDxyZWN0IHg9Ijk2IiB5PSIyMDYiIHdpZHRoPSI3NCIgaGVpZ2h0PSI5IiByeD0iNCIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48cG9seWdvbiBwb2ludHM9IjIwMC4wLDQyLjAgMjA0LjUsNTcuNSAyMjAuMCw2Mi4wIDIwNC41LDY2LjUgMjAwLjAsODIuMCAxOTUuNSw2Ni41IDE4MC4wLDYyLjAgMTk1LjUsNTcuNSIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48L3N2Zz4=" alt=""><b style="color:var(--text)">AzazaTool</b><span>문의: 임현호 (azazahhlim@naver.com)</span><span>azazatool.kr</span></div></footer>
 <script>
-// 최신 릴리스 정보 (버전 · 크기)
 fetch("https://api.github.com/repos/dlwlrmadltnsrks/Urban/releases/latest").then(r => r.ok ? r.json() : null).then(rel => {
   if (!rel) return;
-  document.getElementById("ver").textContent = (rel.name || rel.tag_name);
+  document.getElementById("ver").textContent = (rel.name || rel.tag_name).replace(/^AzazaTool\s*/, "v");
   const a = (rel.assets || []).find(x => x.name === "AzazaTool-win64.zip");
-  if (a) document.getElementById("size").textContent = "약 " + Math.round(a.size / 1e6) + " MB";
+  if (a) document.getElementById("size").textContent = "약 " + Math.round(a.size / 1e6) + "MB";
 }).catch(() => {});
 </script>
 </body></html>
