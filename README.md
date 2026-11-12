@@ -2,7 +2,7 @@
 
 도시·토목·교통 등 엔지니어링 업계 실무자들을 위한 도구 모음 (Windows 10·11, 무료)
 
-**[⬇ 최신 버전 다운로드](https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip)** · [소개 사이트](https://azazatool.kr) · [사용설명서 (PDF)](docs/사용설명서.pdf)
+**[⬇ 최신 버전 다운로드](https://github.com/dlwlrmadltnsrks/Urban/releases/latest/download/AzazaTool-win64.zip)** · [소개 사이트](https://azazatool.kr) · [소개서 (PDF)](docs/소개서.pdf)
 
 ![AzazaTool 첫 화면](docs/launcher.png)
 
